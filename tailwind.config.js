@@ -21,6 +21,9 @@ module.exports = {
         0: "#ffffff",
         1: "F5F5F5",
       },
+      red: {
+        0: "#D81B39",
+      },
       yellow: {
         0: "#F7A009",
       },
