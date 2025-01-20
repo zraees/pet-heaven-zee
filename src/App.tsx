@@ -9,7 +9,7 @@ import Navbar from './Components/Navbar/DesktopNavbar.tsx';
 
 const App = () => {
   return (
-    <div>
+    <div className='bg-white-1'>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
               <BrowserRouter basename="/">
