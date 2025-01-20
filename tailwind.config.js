@@ -20,6 +20,9 @@ module.exports = {
       white: {
         0: "#ffffff",
       },
+      yellow: {
+        0: "F7A009",
+      },
       black: {
         0: "#000000",
       },

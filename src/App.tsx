@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import AppRouter from './Routes/AppRouter.tsx';
 import { persistor, store } from './Store/index.ts';
 import './input.css'
+import Navbar from './Components/Navbar/DesktopNavbar.tsx';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
               <BrowserRouter basename="/">
+                <Navbar />
                 <AppRouter />
               </BrowserRouter>
           </PersistGate>
