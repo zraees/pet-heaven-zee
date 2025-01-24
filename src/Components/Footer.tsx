@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="fb.com" target="_blank" className="hover:text-orange-400 transition">
+            <a href="https://fb.com" target="_blank" className="hover:text-orange-400 transition">
               <FaFacebookF size={20} />
             </a>
-            <a href="twitter.com" target="_blank" className="hover:text-orange-400 transition">
+            <a href="https://twitter.com" target="_blank" className="hover:text-orange-400 transition">
               <FaTwitter size={20} />
             </a>
-            <a href="instagram.com" target="_blank" className="hover:text-orange-400 transition">
+            <a href="https://instagram.com" target="_blank" className="hover:text-orange-400 transition">
               <FaInstagram size={20} />
             </a>
           </div>
