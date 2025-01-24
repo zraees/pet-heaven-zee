@@ -26,6 +26,7 @@ const Footer: React.FC = () => {
             <a
               href="https://fb.com"
               target="_blank"
+              rel="noreferrer"
               className="hover:text-orange-400 transition"
             >
               <FaFacebookF size={20} />
@@ -33,6 +34,7 @@ const Footer: React.FC = () => {
             <a
               href="https://twitter.com"
               target="_blank"
+              rel="noreferrer"
               className="hover:text-orange-400 transition"
             >
               <FaTwitter size={20} />
@@ -40,6 +42,7 @@ const Footer: React.FC = () => {
             <a
               href="https://instagram.com"
               target="_blank"
+              rel="noreferrer"
               className="hover:text-orange-400 transition"
             >
               <FaInstagram size={20} />
