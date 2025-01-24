@@ -1,12 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
-import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import thunk from "redux-thunk";
-import petsReducer from "../Reducers/petReducer.tsx";
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
+import petsReducer from '../Reducers/petReducer.tsx';
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
 };
 
@@ -22,9 +22,9 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
-          "persist/PERSIST",
-          "persist/REHYDRATE",
-          "persist/REGISTER",
+          'persist/PERSIST',
+          'persist/REHYDRATE',
+          'persist/REGISTER',
         ],
       },
     }).concat(thunk),

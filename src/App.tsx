@@ -4,22 +4,22 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import AppRouter from './Routes/AppRouter.tsx';
 import { persistor, store } from './Store/index.ts';
-import './input.css'
+import './input.css';
 import Navbar from './Components/Navbar/DesktopNavbar.tsx';
 
 const App = () => {
   return (
-    <div className='bg-white-1'>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-              <BrowserRouter basename="/">
-                <Navbar />
-                <AppRouter />
-              </BrowserRouter>
-          </PersistGate>
-        </Provider>
+    <div className="bg-white-1">
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter basename="/">
+            <Navbar />
+            <AppRouter />
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
     </div>
   );
-}
+};
 
 export default App;

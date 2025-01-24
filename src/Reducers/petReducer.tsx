@@ -1,13 +1,13 @@
 // store/slices/petsSlice.ts
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { BASE_URL } from "../Utils/constants/index.tsx";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { BASE_URL } from '../Utils/constants/index.tsx';
 
 const fetchPetsApi = `${BASE_URL}pets`;
 const fetchCustomersApi = `${BASE_URL}customers`;
 const fetchMorePetsApi = `${BASE_URL}pets?type=more`;
 
-export const fetchPets = createAsyncThunk("pets/fetchPets", async () => {
+export const fetchPets = createAsyncThunk('pets/fetchPets', async () => {
   const response = await axios.get(fetchPetsApi);
   return response.data;
 });
@@ -22,16 +22,16 @@ export const fetchMorePets = createAsyncThunk("pets/fetchMorePets", async () => 
   return response.data;
 });
 interface Pet {
-    image: string;
-    name: string;
-    sku: string;
-    breed: string;
-    gender: "Male" | "Female";
-    age: string;
-    size: "Small" | "Medium" | "Large" | "Extra Large";
-    vaccinated: boolean;
-    additional_info: string;
-    price: string;
+  image: string;
+  name: string;
+  sku: string;
+  breed: string;
+  gender: 'Male' | 'Female';
+  age: string;
+  size: 'Small' | 'Medium' | 'Large' | 'Extra Large';
+  vaccinated: boolean;
+  additional_info: string;
+  price: string;
 }
   
 interface Customer {
@@ -62,7 +62,7 @@ const initialState: PetState = {
 
 
 const petsSlice = createSlice({
-  name: "pets",
+  name: 'pets',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
