@@ -22,7 +22,10 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        <Link to="/contact" className="px-6 py-2 text-white-0 font-semibold bg-black-0 rounded-full hover:bg-gray-800">
+        <Link
+          to="/contact"
+          className="px-6 py-2 text-white-0 font-semibold bg-black-0 rounded-full hover:opacity-80"
+        >
           Donate Today
         </Link>
       </nav>
