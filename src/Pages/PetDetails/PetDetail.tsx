@@ -15,19 +15,19 @@ const PetDetail: FC = () => {
         "price": "17.50"
       }
       return (
-        <div className="flex justify-center mx-auto w-full  mt-10 max-w-6xl gap-20">
-            <div className='w-1/2 flex flex-col'>
+        <div className="flex flex-col sm:flex-row justify-center mx-auto w-full mt-10 max-w-6xl gap-20">
+            <div className='w-11/12 mx-auto sm:w-1/2 flex flex-col'>
                 <img
                 className="h-auto rounded mb-5"
                 src={data.image}
                 alt={`${data.name}`}
                 />
-                <div className='flex w-full justify-around bg-[#FCEED5] rounded-lg py-3 px-1'>
-                    <img
+                <div className='flex flex-col sm:flex-row w-full justify-around bg-[#FCEED5] rounded-lg py-3 px-1'>
+                    <img className='size-11/12 sm:size-11/12'
                      src={PetIdentificationTag}
                      alt = "PetIdentificationTag"
                     />
-                    <img 
+                    <img className='size-10/12 sm:size-11/12'
                     src={PetHealthTag}
                     alt= "PetHealthTag"
                     />
