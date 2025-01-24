@@ -2,6 +2,7 @@ import React, { useState, FC } from 'react';
 import ContactImage from '../../Assets/ContactPageImage.svg';
 import emailjs from '@emailjs/browser';
 import Spinner from '../../Components/Spinner.tsx';
+import { Slide } from 'react-awesome-reveal';
 
 const Contact: FC = () => {
   const [formData, setFormData] = useState({
@@ -46,81 +47,90 @@ const Contact: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mb-24 sm:mb-0">
-      <img
-        className="w-[70%] sm:w-[50%]"
-        src={ContactImage}
-        alt="Contact page illustration"
-      />
-      {formSubmitted ? (
-        <div className="text-center">
-          <h3 className="text-xl font-semibold mb-4">Thank you!</h3>
-          <p className='text-green-0'>
-            Your message has been sent successfully. Our support team will get
-            back to you soon.
-          </p>
-        </div>
-      ) : isLoading ? (
-        <Spinner />
-      ) : (
-        <>
-          <h3 className="font-bold text-lg">Get in touch</h3>
-          <form onSubmit={handleSubmit} className="w-[80%] space-y-6 py-6">
-            <div className="flex gap-4">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Full Name"
-                className="w-full mt-2 p-3 rounded-md text-white border border-gray-0 border-opacity-40 focus:outline-none focus:ring-1 focus:ring-purple-600"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full mt-2 p-3 rounded-md border border-gray-0 border-opacity-40 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
-                required
-              />
+    <div className="flex flex-col items-center justify-center mb-24 sm:mb-0 w-full">
+      <Slide direction="left">
+        <img
+          className="w-[70%] mx-auto sm:w-[60%]"
+          src={ContactImage}
+          alt="Contact page illustration"
+        />
+      </Slide>
+      <div className="w-full">
+        {formSubmitted ? (
+          <div className="text-center">
+            <h3 className="text-xl font-semibold mb-4">Thank you!</h3>
+            <p className="text-green-0">
+              Your message has been sent successfully. Our support team will get
+              back to you soon.
+            </p>
+          </div>
+        ) : isLoading ? (
+          <Spinner />
+        ) : (
+          <Slide direction="right">
+            <div className="w-full">
+              <h3 className="font-bold text-lg text-center">Get in touch</h3>
+              <form
+                onSubmit={handleSubmit}
+                className="w-[80%] mx-auto space-y-6 py-6"
+              >
+                <div className="flex gap-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Full Name"
+                    className="w-full mt-2 p-3 rounded-md text-white border border-black-0 border-opacity-20 focus:outline-none focus:ring-1 focus:ring-purple-600"
+                    required
+                  />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="w-full mt-2 p-3 rounded-md border border-black-0 border-opacity-20 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                    className="w-full mt-2 p-3 rounded-md border border-black-0 border-opacity-20 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
+                    required
+                  />
+                </div>
+                <div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Please share details here..."
+                    className="w-full mt-2 p-3 rounded-md border border-black-0 border-opacity-20 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
+                    rows={4}
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="mr-4 px-6 py-2 text-white-0 font-semibold bg-yellow-0 rounded-full hover:opacity-80"
+                >
+                  Send Message
+                </button>
+              </form>
             </div>
-            <div>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Subject"
-                className="w-full mt-2 p-3 rounded-md border border-gray-0 border-opacity-40 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
-                required
-              />
-            </div>
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Please share details here..."
-                className="w-full mt-2 p-3 rounded-md border border-gray-0 border-opacity-40 text-white focus:outline-none focus:ring-1 focus:ring-purple-600"
-                rows={4}
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="mr-4 px-6 py-2 text-white-0 font-semibold bg-yellow-0 rounded-full hover:bg-gray-800"
-            >
-              Send Message
-            </button>
-          </form>
-        </>
-      )}
+          </Slide>
+        )}
+      </div>
     </div>
   );
 };
