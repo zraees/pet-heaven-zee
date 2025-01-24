@@ -6,6 +6,7 @@ import AppRouter from './Routes/AppRouter.tsx';
 import { persistor, store } from './Store/index.ts';
 import './input.css';
 import Navbar from './Components/Navbar/DesktopNavbar.tsx';
+import Footer from './Components/Footer.tsx';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <BrowserRouter basename="/">
             <Navbar />
             <AppRouter />
+            <Footer />
           </BrowserRouter>
         </PersistGate>
       </Provider>

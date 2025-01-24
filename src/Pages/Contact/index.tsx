@@ -46,7 +46,7 @@ const Contact: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mb-24 sm:mb-0">
       <img
         className="w-[70%] sm:w-[50%]"
         src={ContactImage}
