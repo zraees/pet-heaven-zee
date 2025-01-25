@@ -5,7 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import AppRouter from './Routes/AppRouter.tsx';
 import { persistor, store } from './Store/index.ts';
 import './input.css';
-import Navbar from './Components/Navbar/DesktopNavbar.tsx';
+import Navbar from './Components/Navbar/index.tsx';
 import Footer from './Components/Footer.tsx';
 
 const App = () => {
