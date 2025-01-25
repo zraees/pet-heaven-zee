@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="sm:block hidden">
+    <div className="">
       <img className="absolute top-0 left-0" src={Logo} alt="logo" />
       <nav className="flex items-center justify-between px-6 py-16 bg-white shadow-md">
         <div className="ml-[320px] flex space-x-6 z-10">
