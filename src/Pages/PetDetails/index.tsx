@@ -3,14 +3,13 @@ import PetDetail from './PetDetail.tsx';
 import MorePetsList from './MorePetsList.tsx';
 import CustomerList from './CustomerList.tsx';
 const PetDetails: FC = () => {
-   return (
+  return (
     <>
-     <PetDetail/>
-     <CustomerList />
-     <MorePetsList />
+      <PetDetail />
+      <CustomerList />
+      <MorePetsList />
     </>
-   )
-      
-}
+  );
+};
 
 export default PetDetails;

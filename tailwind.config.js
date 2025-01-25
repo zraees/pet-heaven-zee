@@ -3,6 +3,15 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        bounce: 'bounce 0.5s ease-in-out',
+      },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
@@ -29,9 +38,15 @@ module.exports = {
       },
       yellow: {
         0: '#F7A009',
+        1: '#FCEED5',
       },
       black: {
         0: '#000000',
+      },
+      gray: {
+        0: '#EBEEEF',
+        1: '#667479',
+        2: '#99A2A5',
       },
     },
     screens: {

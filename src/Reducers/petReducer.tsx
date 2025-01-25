@@ -2,6 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { BASE_URL } from '../Utils/constants/index.tsx';
+import { Pet } from '../Types/index.ts';
 
 const fetchPetsApi = `${BASE_URL}pets`;
 const fetchCustomersApi = `${BASE_URL}customers`;
@@ -12,28 +13,22 @@ export const fetchPets = createAsyncThunk('pets/fetchPets', async () => {
   return response.data;
 });
 
-export const fetchCustomers = createAsyncThunk("pets/fetchCustomers", async () => {
-  const response = await axios.get(fetchCustomersApi);
-  return response.data;
-});
+export const fetchCustomers = createAsyncThunk(
+  'pets/fetchCustomers',
+  async () => {
+    const response = await axios.get(fetchCustomersApi);
+    return response.data;
+  }
+);
 
-export const fetchMorePets = createAsyncThunk("pets/fetchMorePets", async () => {
-  const response = await axios.get(fetchMorePetsApi);
-  return response.data;
-});
-interface Pet {
-  image: string;
-  name: string;
-  sku: string;
-  breed: string;
-  gender: 'Male' | 'Female';
-  age: string;
-  size: 'Small' | 'Medium' | 'Large' | 'Extra Large';
-  vaccinated: boolean;
-  additional_info: string;
-  price: string;
-}
-  
+export const fetchMorePets = createAsyncThunk(
+  'pets/fetchMorePets',
+  async () => {
+    const response = await axios.get(fetchMorePetsApi);
+    return response.data;
+  }
+);
+
 interface Customer {
   id: number;
   customer_image: string;
@@ -43,10 +38,11 @@ interface PetState {
   pets: Pet[];
   morePets: Pet[];
   customers: Customer[];
-  petsStatus: "idle" | "loading" | "succeeded" | "failed"; // Separate status for pets
-  morePetsStatus: "idle" | "loading" | "succeeded" | "failed"; // Separate status for more pets
-  customersStatus: "idle" | "loading" | "succeeded" | "failed"; // Separate status for customers
+  petsStatus: 'idle' | 'loading' | 'succeeded' | 'failed'; // Separate status for pets
+  morePetsStatus: 'idle' | 'loading' | 'succeeded' | 'failed'; // Separate status for more pets
+  customersStatus: 'idle' | 'loading' | 'succeeded' | 'failed'; // Separate status for customers
   error: string | null;
+  selectedPet: Pet | null;
 }
 
 // Initial state
@@ -54,54 +50,58 @@ const initialState: PetState = {
   pets: [],
   morePets: [],
   customers: [],
-  petsStatus: "idle",
-  morePetsStatus: "idle",
-  customersStatus: "idle",
+  petsStatus: 'idle',
+  morePetsStatus: 'idle',
+  customersStatus: 'idle',
   error: null,
+  selectedPet: {},
 };
-
 
 const petsSlice = createSlice({
   name: 'pets',
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedPet: (state, action) => {
+      state.selectedPet = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPets.pending, (state) => {
-        state.petsStatus = "loading";
+        state.petsStatus = 'loading';
       })
       .addCase(fetchPets.fulfilled, (state, action) => {
-        state.petsStatus = "succeeded";
+        state.petsStatus = 'succeeded';
         state.pets = action.payload;
       })
       .addCase(fetchPets.rejected, (state, action) => {
-        state.petsStatus = "failed";
-        state.error = action.error.message || "Failed to fetch pets";
+        state.petsStatus = 'failed';
+        state.error = action.error.message || 'Failed to fetch pets';
       })
       .addCase(fetchMorePets.pending, (state) => {
-        state.morePetsStatus = "loading";
+        state.morePetsStatus = 'loading';
       })
       .addCase(fetchMorePets.fulfilled, (state, action) => {
-        state.morePetsStatus = "succeeded";
+        state.morePetsStatus = 'succeeded';
         state.morePets = action.payload;
       })
       .addCase(fetchMorePets.rejected, (state, action) => {
-        state.morePetsStatus = "failed";
-        state.error = action.error.message || "Failed to fetch more pets";
+        state.morePetsStatus = 'failed';
+        state.error = action.error.message || 'Failed to fetch more pets';
       })
       .addCase(fetchCustomers.pending, (state) => {
-        state.customersStatus = "loading";
+        state.customersStatus = 'loading';
       })
       .addCase(fetchCustomers.fulfilled, (state, action) => {
-        state.customersStatus = "succeeded";
+        state.customersStatus = 'succeeded';
         state.customers = action.payload;
       })
       .addCase(fetchCustomers.rejected, (state, action) => {
-        state.customersStatus = "failed";
-        state.error = action.error.message || "Failed to fetch customers";
+        state.customersStatus = 'failed';
+        state.error = action.error.message || 'Failed to fetch customers';
       });
   },
 });
 
-
+export const { setSelectedPet } = petsSlice.actions;
 export default petsSlice.reducer;
