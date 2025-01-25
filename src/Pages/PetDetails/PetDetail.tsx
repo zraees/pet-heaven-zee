@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import PetHealthTag from '../../Assets/PetHealthTag.svg';
 import PetIdentificationTag from '../../Assets/PetIdentificationTag.svg';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { Slide } from 'react-awesome-reveal';
 const PetDetail: FC = () => {
   const navigate = useNavigate();
   const selectedPet = useSelector((state: RootState) => state.pets.selectedPet);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,6 +18,14 @@ const PetDetail: FC = () => {
     navigate('/');
     return null;
   }
+
+  const handleBookNow = () => {
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 10000); // Hide after 10 seconds
+  };
+
   return (
     <div className="flex flex-col sm:flex-row justify-center mx-auto w-full mt-10 max-w-6xl gap-20">
       <div className="w-11/12 mx-auto sm:w-1/2 flex flex-col">
@@ -79,9 +88,14 @@ const PetDetail: FC = () => {
               <div>: {selectedPet.additional_info}</div>
             </div>
           </div>
-          <button className="bg-yellow-0 text-white-0 py-2 px-6 my-4 font-bold rounded-full hover:opacity-80">
+          <button onClick={handleBookNow} className="bg-yellow-0 text-white-0 py-2 px-6 my-4 font-bold rounded-full hover:opacity-80">
             Book Now
           </button>
+          {showSuccessMessage && (
+            <div className="text-green-0 font-semibold mt-2">
+              Congratulations, your booking request has been sent. You will be contacted soon.
+            </div>
+          )}
         </Slide>
       </div>
     </div>
