@@ -4,6 +4,7 @@ export enum Navigation {
   HOME = '/',
   CONTACT = '/contact',
   PetDetails = '/pet-details',
+  PetCare = '/pet-care',
 }
 
 export const BASE_URL =
@@ -12,5 +13,6 @@ export const BASE_URL =
 
 export const navbarItems = [
     {title: 'Home', path: '/'},
+    {title: 'Pet Care', path: '/pet-care'},
     {title: 'Contact', path: '/contact'},
 ]

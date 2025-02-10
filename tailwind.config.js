@@ -47,6 +47,7 @@ module.exports = {
         0: '#EBEEEF',
         1: '#667479',
         2: '#99A2A5',
+        3: '#F6F6F6',
       },
     },
     screens: {

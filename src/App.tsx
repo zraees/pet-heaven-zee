@@ -10,12 +10,14 @@ import Footer from './Components/Footer.tsx';
 
 const App = () => {
   return (
-    <div className="bg-white-1">
+    <div className="flex flex-col min-h-screen bg-white-1">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter basename="/">
             <Navbar />
-            <AppRouter />
+            <div className="flex-1">
+              <AppRouter />
+            </div>
             <Footer />
           </BrowserRouter>
         </PersistGate>
