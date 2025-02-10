@@ -13,6 +13,6 @@ export const BASE_URL =
 
 export const navbarItems = [
     {title: 'Home', path: '/'},
-    {title: 'Contact', path: '/contact'},
     {title: 'Pet Care', path: '/pet-care'},
+    {title: 'Contact', path: '/contact'},
 ]
