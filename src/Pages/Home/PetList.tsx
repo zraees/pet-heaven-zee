@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import PetCard from '../../Components/PetCard.tsx';
 import { Slide } from 'react-awesome-reveal';
 import { Pet } from '../../Types/index.ts';
+import Dropdown from '../../Components/Dropdown.tsx';
 
 const PetList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,6 +16,7 @@ const PetList: React.FC = () => {
   );
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedBreed, setSelectedBreed] = useState<string | null>(null);
 
   useEffect(() => {
     if (petsStatus === 'idle') {
@@ -22,22 +24,51 @@ const PetList: React.FC = () => {
     }
   }, [dispatch, petsStatus]);
 
-  const filteredPets = pets.filter((pet) =>
-    pet.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const breeds = Array.from(new Set(pets.map((pet) => pet.breed)));
+
+  const filteredPets = pets.filter((pet) => {
+    return (
+      pet.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (selectedBreed ? pet.breed === selectedBreed : true)
+    );
+  });
 
   const handleBookNow = (pet: Pet) => {
     dispatch(setSelectedPet(pet));
     navigate('/pet-details');
   };
-
+console.log('breeds=', breeds);
   return (
     <section className="max-w-6xl mx-auto py-10">
-      <Slide direction="left">
         <h2 className="text-2xl font-bold mb-6 sm:text-left text-center">
           Popular Pets
         </h2>
-        <div className="flex justify-center items-center mb-8 mt-4">
+        <div className='relative z-[100] flex w-full justify-end mt-0 sm:-mt-20 mb-[200px] sm:mb-20'>
+          <Dropdown
+            options={
+              <ul className="space-y-2 max-h-[130px] overflow-auto">
+                <li
+                  className="cursor-pointer hover:bg-yellow-0 hover:text-white-0 p-2 rounded-md"
+                  onClick={() => setSelectedBreed(null)}
+                >
+                  All Breeds
+                </li>
+                {breeds.map((breed, index) => (
+                  <li
+                    key={index}
+                    className="cursor-pointer hover:bg-yellow-0 hover:text-white-0 p-2 rounded-md"
+                    onClick={() => setSelectedBreed(breed)}
+                  >
+                    {breed}
+                  </li>
+                ))}
+              </ul>
+            }
+          >
+            <span className="mr-2">{selectedBreed ? selectedBreed : "Filter by Breed"}</span>
+          </Dropdown>
+          </div>
+        <div className="flex justify-center items-center mb-8 mt-10">
           <div className="relative w-80">
             <input
               type="text"
@@ -49,7 +80,6 @@ const PetList: React.FC = () => {
             <span className="absolute left-4 top-2 text-gray-400">🔍</span>
           </div>
         </div>
-      </Slide>
       {petsStatus === 'loading' && (
         <p className="text-center">Loading pets...</p>
       )}
