@@ -18,7 +18,6 @@ const PetCard: React.FC<PetCardProps> = ({
 }) => {
   return (
     <div className="hover:bg-yellow-0 hover:text-white-0 bg-white shadow-md rounded-xl overflow-hidden p-4 flex flex-col items-center w-[90%] sm:min-w-[280px] mx-auto hover:-translate-y-2 transition-transform duration-300 delay-300">
-      <Slide direction="right">
         <img
           src={image}
           alt={name}
@@ -37,7 +36,6 @@ const PetCard: React.FC<PetCardProps> = ({
         <button className="mt-4 px-6 py-2 border-2 font-semibold rounded-lg hover:opacity-80 hover:text-white transition">
           Details
         </button>
-      </Slide>
     </div>
   );
 };
