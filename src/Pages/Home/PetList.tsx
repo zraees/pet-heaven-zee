@@ -4,7 +4,6 @@ import { AppDispatch, RootState } from '../../Store/index.ts';
 import { fetchPets, setSelectedPet } from '../../Reducers/petReducer.tsx';
 import { useNavigate } from 'react-router-dom';
 import PetCard from '../../Components/PetCard.tsx';
-import { Slide } from 'react-awesome-reveal';
 import { Pet } from '../../Types/index.ts';
 import Dropdown from '../../Components/Dropdown.tsx';
 
