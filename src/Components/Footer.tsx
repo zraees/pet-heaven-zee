@@ -11,8 +11,14 @@ const Footer: React.FC = () => {
             <a href="/" className="hover:text-orange-400 transition">
               Home
             </a>
+            <a href="/pet-care" className="hover:text-orange-400 transition">
+              Pet Care
+            </a>
             <a href="/contact" className="hover:text-orange-400 transition">
               Contact
+            </a>
+            <a href="/about" className="hover:text-orange-400 transition">
+              About
             </a>
           </div>
 
