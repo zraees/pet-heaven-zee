@@ -33,7 +33,7 @@ const CustomerList: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {customers.map((customer) => (
             <div key={customer.id} className="rounded-lg overflow-hidden">
-              <Slide direction="left">
+              <Slide direction="left" triggerOnce={true}>
                 <img
                   src={customer.customer_image}
                   alt={`Customer ${customer.id}`}

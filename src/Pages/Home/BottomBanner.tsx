@@ -5,7 +5,7 @@ import { Slide } from 'react-awesome-reveal';
 const BottomBanner: React.FC = () => {
   return (
     <section className="flex items-center justify-center pt-2 pb-10">
-      <Slide direction="left">
+      <Slide direction="left" triggerOnce={true}>
         <div className="bg-yellow-0 rounded-lg flex sm:flex-row flex-col items-center px-8 p-2 w-[80%] mx-auto">
           <div className="w-[90%] mx-auto sm:w-1/2">
             <img src={WomanWithPet} alt="Woman" className="w-[400px] h-auto" />

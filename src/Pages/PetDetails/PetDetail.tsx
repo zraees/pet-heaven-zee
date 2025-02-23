@@ -53,7 +53,7 @@ const PetDetail: FC = () => {
   return (
     <div className="flex flex-col sm:flex-row justify-center mx-auto w-full mt-10 max-w-6xl gap-20">
       <div className="w-11/12 mx-auto sm:w-1/2 flex flex-col">
-        <Slide direction="left">
+        <Slide direction="left" triggerOnce={true}>
           <img
             className="w-full rounded mb-5"
             src={selectedPet?.image}
@@ -66,7 +66,7 @@ const PetDetail: FC = () => {
         </Slide>
       </div>
       <div className="w-full sm:w-1/2 pl-8">
-        <Slide direction="right">
+        <Slide direction="right" triggerOnce={true}>
           <span className="text-gray-2 text-sm block mb-2">SKU #{selectedPet.sku}</span>
           <h3 className="text-2xl font-bold mb-2">{selectedPet.breed}</h3>
           <div className="text-xl mb-4">$ {selectedPet.price}</div>
