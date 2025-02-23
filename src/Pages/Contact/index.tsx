@@ -2,6 +2,7 @@ import React, { useState, FC } from 'react';
 import ContactImage from '../../Assets/ContactPageImage.svg';
 import emailjs from '@emailjs/browser';
 import Spinner from '../../Components/Spinner.tsx';
+import { Slide } from 'react-awesome-reveal';
 
 const Contact: FC = () => {
   const [formData, setFormData] = useState({
@@ -47,11 +48,13 @@ const Contact: FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center mb-24 sm:mb-0 w-full">
+      <Slide direction="left" triggerOnce={true}>
         <img
           className="w-[70%] mx-auto sm:w-[60%]"
           src={ContactImage}
           alt="Contact page illustration"
         />
+      </Slide>
       <div className="w-full">
         {formSubmitted ? (
           <div className="text-center">
@@ -64,6 +67,7 @@ const Contact: FC = () => {
         ) : isLoading ? (
           <Spinner />
         ) : (
+          <Slide direction="right" triggerOnce={true}>
             <div className="w-full">
               <h3 className="font-bold text-lg text-center">Get in touch</h3>
               <form
@@ -124,6 +128,7 @@ const Contact: FC = () => {
                 </button>
               </form>
             </div>
+          </Slide>
         )}
       </div>
     </div>
