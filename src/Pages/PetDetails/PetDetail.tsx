@@ -4,7 +4,6 @@ import PetIdentificationTag from '../../Assets/PetIdentificationTag.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
-import { Slide } from 'react-awesome-reveal';
 import Modal from '../../Components/Modal.tsx';
 
 const PetDetail: FC = () => {
@@ -53,7 +52,6 @@ const PetDetail: FC = () => {
   return (
     <div className="flex flex-col sm:flex-row justify-center mx-auto w-full mt-10 max-w-6xl gap-20">
       <div className="w-11/12 mx-auto sm:w-1/2 flex flex-col">
-        <Slide direction="left">
           <img
             className="w-full rounded mb-5"
             src={selectedPet?.image}
@@ -63,10 +61,8 @@ const PetDetail: FC = () => {
             <img className="size-11/12 sm:size-11/12" src={PetIdentificationTag} alt="PetIdentificationTag" />
             <img className="size-10/12 sm:size-11/12" src={PetHealthTag} alt="PetHealthTag" />
           </div>
-        </Slide>
       </div>
       <div className="w-full sm:w-1/2 pl-8">
-        <Slide direction="right">
           <span className="text-gray-2 text-sm block mb-2">SKU #{selectedPet.sku}</span>
           <h3 className="text-2xl font-bold mb-2">{selectedPet.breed}</h3>
           <div className="text-xl mb-4">$ {selectedPet.price}</div>
@@ -107,7 +103,6 @@ const PetDetail: FC = () => {
               Congratulations, your booking request has been sent. You will be contacted soon.
             </div>
           )}
-        </Slide>
       </div>
 
       {/* Booking Modal */}

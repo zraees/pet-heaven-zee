@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../Store/index.ts';
 import { fetchCustomers } from '../../Reducers/petReducer.tsx';
-import { Slide } from 'react-awesome-reveal';
 
 const CustomerList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -33,13 +32,11 @@ const CustomerList: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {customers.map((customer) => (
             <div key={customer.id} className="rounded-lg overflow-hidden">
-              <Slide direction="left">
                 <img
                   src={customer.customer_image}
                   alt={`Customer ${customer.id}`}
                   className="w-[85%] mx-auto sm:w-full h-96 object-cover rounded-lg shadow-md"
                 />
-              </Slide>
             </div>
           ))}
         </div>

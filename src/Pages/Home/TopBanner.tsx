@@ -1,11 +1,9 @@
 import React from 'react';
 import DogsGroup from '../../Assets/DogsGroup.svg';
-import { Slide } from 'react-awesome-reveal';
 
 const TopBanner: React.FC = () => {
   return (
     <section className="flex items-center justify-center py-10">
-      <Slide direction="left">
         <div className="bg-yellow-0 rounded-lg flex sm:flex-row flex-col items-center p-2 w-[80%] mx-auto">
           <div className="w-[90%] mx-auto sm:w-1/2">
             <img src={DogsGroup} alt="Dogs" className="w-full h-auto" />
@@ -23,7 +21,6 @@ const TopBanner: React.FC = () => {
             </p>
           </div>
         </div>
-      </Slide>
     </section>
   );
 };
