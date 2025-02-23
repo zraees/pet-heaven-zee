@@ -23,7 +23,7 @@ const TopBanner: React.FC = () => {
             </p>
           </div>
         </div>
-      </Slide>
+      </Slide>        
     </section>
   );
 };

@@ -4,8 +4,8 @@ import PetIdentificationTag from '../../Assets/PetIdentificationTag.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
-import { Slide } from 'react-awesome-reveal';
 import Modal from '../../Components/Modal.tsx';
+import { Slide } from 'react-awesome-reveal';
 
 const PetDetail: FC = () => {
   const navigate = useNavigate();

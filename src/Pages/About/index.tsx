@@ -3,7 +3,7 @@ import PetCarousel from '../../Components/PetCarousel.tsx'
 import PetCarouselImg1 from '../../Assets/PetCarouselImg1.svg'
 import PetCarouselImg2 from '../../Assets/PetCarouselImg2.svg'
 import PetCarouselImg3 from '../../Assets/PetCarouselImg3.svg'
-import AboutPageImg from '../../Assets/AboutPageImg.svg'
+import AboutPageImg from '../../Assets/AboutPageImg.png'
 
 const About = () => {
     const Images = [PetCarouselImg1,PetCarouselImg2,PetCarouselImg3]
