@@ -1,11 +1,13 @@
 import React from 'react';
 import WomanWithPet from '../../Assets/WomanWithPet.svg';
 import { Slide } from 'react-awesome-reveal';
+import { OneTimeAnimations } from '../../Utils/constants/index.tsx';
+import useAnimationOnce from '../../CustomHooks/useAnimationOnce.ts';
 
 const BottomBanner: React.FC = () => {
-  return (
-    <section className="flex items-center justify-center pt-2 pb-10">
-      <Slide direction="left" triggerOnce={true}>
+  const shouldAnimate = useAnimationOnce(OneTimeAnimations.BOTTOM_BANNER_ANIMATION);
+
+  const bannerContent = (
         <div className="bg-yellow-0 rounded-lg flex sm:flex-row flex-col items-center px-8 p-2 w-[80%] mx-auto">
           <div className="w-[90%] mx-auto sm:w-1/2">
             <img src={WomanWithPet} alt="Woman" className="w-[400px] h-auto" />
@@ -23,7 +25,10 @@ const BottomBanner: React.FC = () => {
             </p>
           </div>
         </div>
-      </Slide>
+  )
+  return (
+    <section className="flex items-center justify-center pt-2 pb-10">
+      {shouldAnimate ? <Slide direction="left" triggerOnce={true}>{bannerContent}</Slide> : bannerContent}
     </section>
   );
 };
