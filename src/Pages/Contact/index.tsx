@@ -3,6 +3,8 @@ import ContactImage from '../../Assets/ContactPageImage.svg';
 import emailjs from '@emailjs/browser';
 import Spinner from '../../Components/Spinner.tsx';
 import { Slide } from 'react-awesome-reveal';
+import { OneTimeAnimations } from '../../Utils/constants/index.tsx';
+import useAnimationOnce from '../../CustomHooks/useAnimationOnce.ts';
 
 const Contact: FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const Contact: FC = () => {
     subject: '',
     message: '',
   });
+
+  const shouldAnimate = useAnimationOnce(OneTimeAnimations.CONTACT_PAGE_ANIMATION);
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Loading state
@@ -46,28 +50,15 @@ const Contact: FC = () => {
       });
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center mb-24 sm:mb-0 w-full">
-      <Slide direction="left" triggerOnce={true}>
-        <img
-          className="w-[70%] mx-auto sm:w-[60%]"
-          src={ContactImage}
-          alt="Contact page illustration"
-        />
-      </Slide>
-      <div className="w-full">
-        {formSubmitted ? (
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">Thank you!</h3>
-            <p className="text-green-0">
-              Your message has been sent successfully. Our support team will get
-              back to you soon.
-            </p>
-          </div>
-        ) : isLoading ? (
-          <Spinner />
-        ) : (
-          <Slide direction="right" triggerOnce={true}>
+  const imageContent = (
+    <img
+      className="w-[70%] mx-auto sm:w-[60%]"
+      src={ContactImage}
+      alt="Contact page illustration"
+    />
+  )
+
+  const formContent = (
             <div className="w-full">
               <h3 className="font-bold text-lg text-center">Get in touch</h3>
               <form
@@ -128,7 +119,25 @@ const Contact: FC = () => {
                 </button>
               </form>
             </div>
-          </Slide>
+  )
+  return (
+    <div className="flex flex-col items-center justify-center mb-24 sm:mb-0 w-full">
+      {shouldAnimate ? <Slide direction="left" triggerOnce={true}>{imageContent}</Slide> : imageContent}
+      <div className="w-full">
+        {formSubmitted ? (
+          <div className="text-center">
+            <h3 className="text-xl font-semibold mb-4">Thank you!</h3>
+            <p className="text-green-0">
+              Your message has been sent successfully. Our support team will get
+              back to you soon.
+            </p>
+          </div>
+        ) : isLoading ? (
+          <Spinner />
+        ) : shouldAnimate ? (
+          <Slide direction="right" triggerOnce={true}>{formContent}</Slide>
+        ) : (
+          formContent
         )}
       </div>
     </div>
