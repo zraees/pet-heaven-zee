@@ -13,11 +13,12 @@ jobs:
         run: |
           curl -X POST https://alesha-unconvertible-trey.ngrok-free.dev/webhook/github-pr \
             -H "Content-Type: application/json" \
-            -d '{
-              "action": "${{ github.event.action }}",
-              "title": "${{ github.event.pull_request.title }}",
-              "branch": "${{ github.event.pull_request.head.ref }}",
-              "base": "${{ github.event.pull_request.base.ref }}",
-              "repo": "${{ github.repository }}",
-              "sender": "${{ github.actor }}"
-            }'
+            -d @- <<EOF
+          {
+            "action": "${{ github.event.action }}",
+            "title": "${{ github.event.pull_request.title }}",
+            "branch": "${{ github.event.pull_request.head.ref }}",
+            "base": "${{ github.event.pull_request.base.ref }}",
+            "repo": "${{ github.repository }}",
+            "sender": "${{ github.actor }}"
+          }
