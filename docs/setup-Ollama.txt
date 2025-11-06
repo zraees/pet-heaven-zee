@@ -1,0 +1,80 @@
+macOS setup: Ollama 
+
+Models: mistral:7b-instruct, qwen2.5:7b-instruct, llama3.1:latest
+
+0) Prereqs
+
+macOS (Apple Silicon or Intel) with Homebrew (brew -v)
+
+n8n (desktop or Docker)
+
+1) Install Ollama (formula, not cask)
+# Remove old GUI/cask if present
+brew uninstall --cask ollama || true
+
+# Install CLI/server
+brew install ollama
+
+2) Start the server (pick ONE)
+A) Background service (recommended)
+brew services start ollama
+
+B) Foreground (debug-friendly)
+export OLLAMA_NO_GPU=1   # optional: force CPU, quieter logs
+export OLLAMA_DEBUG=1
+ollama serve
+
+3) Verify the API
+# Port check (one listener expected)
+lsof -iTCP:11434 -sTCP:LISTEN -n -P
+
+# Version + OpenAI-compatible endpoint
+curl -s http://127.0.0.1:11434/api/version && echo
+curl -s -H "Authorization: Bearer ollama" http://127.0.0.1:11434/v1/models && echo
+
+
+If 11434 is “already in use”:
+lsof -iTCP:11434 -sTCP:LISTEN -n -P → kill <PID>
+
+4) Ensure no proxies interfere (important)
+unset HTTP_PROXY HTTPS_PROXY NO_PROXY
+launchctl unsetenv HTTP_PROXY
+launchctl unsetenv HTTPS_PROXY
+launchctl unsetenv NO_PROXY
+
+5) Pull the standard model set
+# 1) Solid default for summaries / reviews
+ollama pull mistral:7b-instruct
+
+# 2) Strong alternative (concise, capable)
+ollama pull qwen2.5:7b-instruct
+
+# 3) Llama 3.1 latest tag (good quality; larger)
+ollama pull llama3.1:latest
+
+# List to confirm
+curl -s -H "Authorization: Bearer ollama" http://127.0.0.1:11434/v1/models | jq
+
+
+Disk/RAM note: Each 7B model is ~4–5 GB download; keep ~15–20 GB free if installing all three.
+
+6) Smoke test each model
+# Mistral
+curl -s -H "Authorization: Bearama" -H "Content-Type: application/json" \
+  http://127.0.0.1:11434/v1/chat/completions \
+  -d '{"model":"mistral:7b-instruct","messages":[{"role":"user","content":"Say hello in one sentence."}], "max_tokens":64}' \
+| jq '.choices[0].message.content'
+
+# Qwen2.5
+curl -s -H "Authorization: Bearer ollama" -H "Content-Type: application/json" \
+  http://127.0.0.1:11434/v1/chat/completions \
+  -d '{"model":"qwen2.5:7b-instruct","messages":[{"role":"user","content":"Say hello in one sentence."}], "max_tokens":64}' \
+| jq '.choices[0].message.content'
+
+# Llama 3.1
+curl -s -H "Authorization: Bearer ollama" -H "Content-Type: application/json" \
+  http://127.0.0.1:11434/v1/chat/completions \
+  -d '{"model":"llama3.1:latest","messages":[{"role":"user","content":"Say hello in one sentence."}], "max_tokens":64}' \
+| jq '.choices[0].message.content'
+
+7) n8n wiring (OpenAI-compatible)
