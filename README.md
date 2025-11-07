@@ -1,4 +1,4 @@
-# Pet Heaven Website v9 ...
+# Pet Heaven Website v1 (new changes)
 
 This is a pets ownership transfer website built with React.js, Typescript and Tailwind CSS. It shows the pets which are being given away by their owners. Website also provide option for new customers to give away or adopt a pet.
 
@@ -24,5 +24,3 @@ The following dependencies are required for this project:
 ## Website Live Link
 
 https://pet-heaven4.netlify.app/
-
-this is end of doc ..- --.
