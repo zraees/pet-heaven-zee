@@ -1,0 +1,19 @@
+{
+  "factuality": 5,
+  "readability": 4.1,
+  "completeness": 4.1,
+  "average": 4.38,
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 57,
+    "title": "Create MainModal.tsx",
+    "body": "",
+    "head": "AliSubhani1-patch-28",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/57"
+  },
+  "timestamp": "2025-11-08T15:53:56.922Z"
+}
