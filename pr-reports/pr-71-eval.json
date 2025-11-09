@@ -1,0 +1,19 @@
+{
+  "factuality": 5,
+  "readability": 3.9,
+  "completeness": 3.9,
+  "average": 4.29,
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 71,
+    "title": "Update README to request more setup details",
+    "body": "Added a note to include more setup details in the README.",
+    "head": "AliSubhani1-patch-42",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/71"
+  },
+  "timestamp": "2025-11-09T11:43:01.472Z"
+}
