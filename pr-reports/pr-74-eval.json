@@ -1,0 +1,19 @@
+{
+  "factuality": 5,
+  "readability": 4,
+  "completeness": 4,
+  "average": 4.31,
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 74,
+    "title": "Remove setup details placeholder in README",
+    "body": "Removed placeholder text for setup instructions.",
+    "head": "AliSubhani1-patch-45",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/74"
+  },
+  "timestamp": "2025-11-09T12:17:34.303Z"
+}
