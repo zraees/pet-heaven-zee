@@ -58,8 +58,8 @@ const PetDetail: FC = () => {
     <>
       <img className="w-full rounded mb-5" src={selectedPet?.image} alt={`${selectedPet.name}`} />
       <div className="flex flex-col sm:flex-row w-full justify-around bg-yellow-1 rounded-lg py-3 px-1">
-        <img className="size-11/12 sm:size-11/12" src={PetIdentificationTag} alt="PetIdentificationTag" />
-        <img className="size-10/12 sm:size-11/12" src={PetHealthTag} alt="PetHealthTag" />
+        <img className="size-10/12 sm:size-11/12" src={PetIdentificationTag} alt="PetIdentificationTag" />
+        <img className="size-9/12 sm:size-10/12 mt-[2px] -ml-4" src={PetHealthTag} alt="PetHealthTag" />
       </div>
     </>
   );
@@ -98,7 +98,7 @@ const PetDetail: FC = () => {
           <div>: {selectedPet.additional_info}</div>
         </div>
       </div>
-      <button onClick={handleBookNow} className="bg-yellow-0 text-white-0 py-2 px-6 my-4 font-bold rounded-full hover:opacity-80">
+      <button onClick={handleBookNow} className="bg-yellow-0 text-white-0 py-3 px-8 my-4 font-bold rounded-full hover:opacity-80">
         Book Now
       </button>
       {showSuccessMessage && (
