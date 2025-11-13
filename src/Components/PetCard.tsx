@@ -35,9 +35,6 @@ const PetCard: React.FC<PetCardProps> = ({
         <button className="mt-4 px-6 py-2 border-2 font-semibold rounded-lg hover:opacity-80 hover:text-white transition">
           Details
         </button>
-        <button className="mt-4 px-6 py-2 border-2 font-semibold rounded-lg hover:opacity-80 hover:text-white transition">
-          Book now
-        </button>
     </div>
   );
 };
