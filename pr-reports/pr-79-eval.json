@@ -1,0 +1,19 @@
+{
+  "factuality": 5,
+  "readability": 4,
+  "completeness": 4,
+  "average": 4.34,
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 79,
+    "title": "Daniil/light UI fixes",
+    "body": "Made light changes to the UI in the pets' details page.",
+    "head": "daniil/light-ui-fixes",
+    "base": "main",
+    "author": "IkomovONE",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/79"
+  },
+  "timestamp": "2025-11-13T14:22:30.623Z"
+}
