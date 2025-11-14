@@ -1,0 +1,19 @@
+{
+  "factuality": 5,
+  "readability": 4.1,
+  "completeness": 4.1,
+  "average": 4.41,
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 81,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-50",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/81"
+  },
+  "timestamp": "2025-11-14T08:07:03.737Z"
+}
