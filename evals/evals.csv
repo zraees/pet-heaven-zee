@@ -4,3 +4,4 @@ pr_number,owner,repo,factuality,readability,completeness,alignment_with_example,
 97,zraees,pet-heaven-zee,,,,,,2025-11-22T14:37:25.394Z
 101,zraees,pet-heaven-zee,,,,,,2025-11-22T14:52:38.424Z
 102,zraees,pet-heaven-zee,5,4,4,3,4.25,2023-01-01T12:00:00Z
+103,zraees,pet-heaven-zee,5,3,2,1,2.6,"The PR description lacks structure and detail provided in the example template, only providing a summary and not an overview of changes. The description also does not explain the implementation approach or architectural reasoning.",2023-04-18T14:56:29Z
