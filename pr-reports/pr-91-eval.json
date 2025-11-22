@@ -1,0 +1,15 @@
+{
+  "output": " {\n  \"factuality\": 5,\n  \"readability\": 4,\n  \"completeness\": 3,\n  \"alignment_with_example\": 2,\n  \"average\": 3.5,\n  \"notes\": \"Although this PR description provides a summary and detailed changes appropriately, it lacks a comprehensive explanation of implemented features or changes to the architecture. Consider providing more context about the update in README.md for better readability and compliance with the example template.\",\n  \"timestamp\": \"2022-11-16T13:45:47Z\"\n}",
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 91,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-60",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/91"
+  }
+}
