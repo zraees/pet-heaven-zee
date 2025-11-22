@@ -1,0 +1,15 @@
+{
+  "output": " {\n  \"factuality\": 5,\n  \"readability\": 2,\n  \"completeness\": 3,\n  \"alignment_with_example\": 1,\n  \"average\": 2.8,\n  \"notes\": \"Although the factual information presented is accurate, it lacks depth and clarity needed to fully explain changes in the PR. The PR description does not follow the given example template structure and style.\",\n  \"timestamp\": \"2022-05-16T23:38:24Z\"\n}",
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 96,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-65",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/96"
+  }
+}
