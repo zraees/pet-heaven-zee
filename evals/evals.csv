@@ -9,3 +9,4 @@ pr_number,owner,repo,factuality,readability,completeness,average,model,prompt_ve
 82,zraees,pet-heaven-zee,5,4.1,4.1,4.37,ollama:llama3.1,v1.0,2025-11-14T08:10:23.354Z
 83,zraees,pet-heaven-zee,5,4.3,4.3,4.54,ollama:llama3.1,v1.0,2025-11-22T11:04:28.185Z
 85,zraees,pet-heaven-zee,5,3.8,3.8,4.22,ollama:llama3.1,v1.0,2025-11-22T13:12:00.432Z
+86,zraees,pet-heaven-zee,5,4.1,4.1,4.38,ollama:llama3.1,v1.0,2025-11-22T13:17:12.735Z
