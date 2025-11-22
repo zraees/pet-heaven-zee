@@ -1,0 +1,9 @@
+{
+  "factuality": 5,
+  "readability": 3,
+  "completeness": 2,
+  "alignment_with_example": 1,
+  "average": 2.6,
+  "notes": "The PR description lacks structure and detail provided in the example template, only providing a summary and not an overview of changes. The description also does not explain the implementation approach or architectural reasoning.",
+  "timestamp": "2023-04-18T14:56:29Z"
+}
