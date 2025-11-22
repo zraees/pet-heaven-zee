@@ -1,0 +1,15 @@
+{
+  "output": " {\n  \"factuality\": 4,\n  \"readability\": 2,\n  \"completeness\": 3,\n  \"alignment_with_example\": 1,\n  \"average\": 2.4,\n  \"notes\": \"The PR description does not provide a detailed overview of changes or improvements made; it is more focused on file-specific details and does not follow the provided example template.\",\n  \"timestamp\": \"2023-05-18T09:37:04.632Z\"\n}",
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 98,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-67",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/98"
+  }
+}
