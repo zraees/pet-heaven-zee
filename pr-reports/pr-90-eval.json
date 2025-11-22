@@ -1,0 +1,15 @@
+{
+  "output": " {\n  \"factuality\": 5,\n  \"readability\": 3,\n  \"completeness\": 2,\n  \"alignment_with_example\": 1,\n  \"average\": 3.0,\n  \"notes\": \"The PR description lacks necessary details and does not follow the example PR template style. However, factual information appears to be accurate.\",\n  \"timestamp\": \"2022-04-12T18:35:56Z\"\n}",
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 90,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-59",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/90"
+  }
+}
