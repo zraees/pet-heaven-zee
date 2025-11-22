@@ -1,0 +1,9 @@
+{
+  "factuality": 5,
+  "readability": 4,
+  "completeness": 3,
+  "alignment_with_example": 2,
+  "average": 3.6,
+  "notes": "The PR description does not follow the example template thoroughly, but it is still clear and informative.",
+  "timestamp": "2023-02-17T15:09:48Z"
+}
