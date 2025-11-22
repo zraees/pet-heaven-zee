@@ -1,0 +1,15 @@
+{
+  "output": " {\n  \"factuality\": 5,\n  \"readability\": 3,\n  \"completeness\": 3,\n  \"alignment_with_example\": 2,\n  \"average\": 3.25,\n  \"notes\": \"Although the PR description provides accurate information regarding the changes and impact, it lacks clarity and follows the example style only partially.\",\n  \"timestamp\": \"2022-01-01T14:16:48Z\"\n}",
+  "pr": {
+    "owner": "zraees",
+    "repo": "pet-heaven-zee",
+    "number": 97,
+    "title": "Update README.md",
+    "body": "",
+    "head": "AliSubhani1-patch-66",
+    "base": "ali/n8n-changes",
+    "author": "AliSubhani1",
+    "state": "open",
+    "url": "https://github.com/zraees/pet-heaven-zee/pull/97"
+  }
+}
