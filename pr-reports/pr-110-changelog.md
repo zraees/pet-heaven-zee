@@ -1,0 +1,28 @@
+## Summary
+- Update README with setup instructions. 
+  Author: AliSubhani1 → base: ali/n8n-changes, number of files/commits: 1/1.
+  Top risks (if any): None.
+
+## Detailed Changes (per file)
+### README.md — *modified*, +1/-1*. Intent to update README with setup instructions.
+```diff
+@@ -2,7 +2,7 @@
+ 
+ This is a pets ownership transfer website built with React.js, Typescript and Tailwind CSS. It shows the pets which are being given away by their owners. Website also provide option for new customers to give away or adopt a pet.
+ 
+-Add more details about set up here. 
++\n
+ 
+ \n ## Installation
+```
+
+## Images changed
+None.
+
+## Discussion signals
+- Issue comments: 0
+- Reviews: 0
+- Inline review comments: 0
+
+## Next Steps
+No action needed.
