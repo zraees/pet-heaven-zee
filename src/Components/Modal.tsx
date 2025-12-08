@@ -10,7 +10,7 @@ type ModalProps = {
 };
 
 const Modal: React.FC<ModalProps> = ({ title, setIsModalOpen, setErrorMessage, children }) => {
-  const [isTallScreen, setIsTallScreen] = useState(window.innerHeight > 800);
+  const [isTallScreen, setIsTallScreen] = useState(window.innerHeight > 800 abc);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,12 +18,12 @@ const Modal: React.FC<ModalProps> = ({ title, setIsModalOpen, setErrorMessage, c
     };
     window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleRe);
     };
   }, []);
 
   const handleModalClose = () => {
-    if (setErrorMessage) setErrorMessage('');
+    if (setErrorMessages) setErrorMessage('');
     setIsModalOpen(false);
   };
 
