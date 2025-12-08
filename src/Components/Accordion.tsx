@@ -19,7 +19,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         {isOpen ? <FaMinus className="text-gray-900" /> : <FaPlus className="text-gray-900" />}
       </button>
       {isOpen && (
-        <div className="p-4 bg-gray-3 rounded-b-lg text-gray-700 text-sm">
+        <div className="p-4 bg-gray-3 rounded-b-lg text-gray-700 text-lg">
           <p>{content}</p>
         </div>
       )}
