@@ -57,7 +57,7 @@ const Modal: React.FC<ModalProps> = ({ title, setIsModalOpen, setErrorMessage, c
                 </button>
               </div>
             </div>
-            <div className="mt-3">{children}</div>
+            <div className="mt-3">{children} component</div>
           </div>
         </div>
       </div>
