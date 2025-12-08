@@ -1,0 +1,9 @@
+{
+  "factuality": 5,
+  "readability": 5,
+  "completeness": 5,
+  "alignment_with_example": 4,
+  "average": 4.75,
+  "notes": "The report is well structured and factual with correct technical details provided. However, it lacks a section outlining the high-level architectural intent behind the change as per the example pattern.",
+  "timestamp": "2023-05-16T18:00:00Z"
+}
