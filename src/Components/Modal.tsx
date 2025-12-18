@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({ title, setIsModalOpen, setErrorMessage, c
       <div className="fixed inset-0 z-10 bg-gray-1 opacity-30"></div>
       <div
         className={`fixed z-10 inset-0 overflow-y-auto backdrop-blur-sm flex justify-center ${
-          isTallScreen ? 'items-center' : 'items-start'
+          isTallScreen ? 'items-center' : 'items-start-align'
         }`}
       >
         <div className="flex items-end justify-center min-h-[740px] pt-4 px-4 pb-20 text-center md:block sm:p-0">
