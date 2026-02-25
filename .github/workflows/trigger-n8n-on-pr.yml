@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Send PR data to n8n via HTTP POST
         run: |
-          curl -X POST https://alesha-unconvertible-trey.ngrok-free.dev/webhook/github-pr \
+          curl -X POST https://leigha-subapostolic-latently.ngrok-free.dev/webhook/github-pr \
             -H "Content-Type: application/json" \
             -d @- <<EOF
           {
